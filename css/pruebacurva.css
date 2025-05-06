@@ -1,0 +1,27 @@
+.curva-iconos {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5vw;
+    z-index: 5;
+  }
+  
+  .curva-iconos li {
+    list-style: none;
+  }
+  
+  .curva-iconos li:nth-child(1) { transform: translateY(10%); }
+  .curva-iconos li:nth-child(2) { transform: translateY(0); }
+  .curva-iconos li:nth-child(3) { transform: translateY(10%); }
+  
+  .curva-iconos img {
+    width: 7vw;
+    max-width: 70px;
+    transition: transform 0.3s ease;
+  }
+  .curva-iconos img:hover {
+    transform: scale(1.1);
+  }
+  

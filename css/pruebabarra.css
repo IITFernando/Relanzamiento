@@ -1,0 +1,12 @@
+body
+{
+    background-color: white;
+    margin: 0;
+}
+
+.barra
+{
+    bottom: 0;
+    position: fixed;
+    right: 0;
+}
