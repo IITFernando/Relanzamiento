@@ -3,7 +3,7 @@
   margin: 0;
 }
 body {
-  background-image: url("images/fondoDiurno.png");
+  background-image: url("/images/fondoDiurno.png");
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 14px;
