@@ -104,12 +104,12 @@ nav {
 .logos
 {
   margin-top: 37px;
+  transition: transform 0.6s ease;
   width: 95%;
 }
 
 .logos:hover
 {
-  transition: transform 0.6s ease;
   transform: scale(1.2);
 }
 
@@ -118,11 +118,11 @@ nav {
   border-radius: 5px;
   margin-left: 27px;
   margin-top: 32px;
+  transition: transform 0.6s ease;
   width: 69%;
 }
 
 .logosF:hover {
-  transition: transform 0.6s ease;
   transform: scale(1.2);
 }
 
