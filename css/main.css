@@ -40,6 +40,7 @@ nav {
   left:74%;
   position: absolute;
   top: 6%;
+  transition: box-shadow 0.6s ease;
   width: 180px;
 }
 
@@ -51,6 +52,7 @@ nav {
   left:39%;
   position: absolute;
   top: 23%;
+  transition: box-shadow 0.6s ease;
   width: 180px;
 }
 
@@ -61,6 +63,7 @@ nav {
   height: 180px;
   position: absolute;
   left:10%;
+  transition: box-shadow 0.6s ease;
   top: 57%;
   width: 180px;
 }
@@ -104,7 +107,8 @@ nav {
   width: 95%;
 }
 
-.logos:hover {
+.logos:hover
+{
   transition: transform 0.6s ease;
   transform: scale(1.2);
 }
@@ -145,6 +149,7 @@ nav {
   text-align: left;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   top: 225px;
+  transition: opacity 0.6s ease;
   width: 26%;
 }
 
@@ -162,6 +167,54 @@ nav {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
   /* width: 725px; */
   width: 100%;
+}
+
+.textoDesarrollo
+{
+  color: rgba(93,31,255,1);
+  font-family: Quicksand;
+  font-size: 18px;
+  font-weight:bold;
+  position: absolute;
+  right: 2%;
+  text-align: right;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  top: 47%;
+  transition: opacity 0.6s ease;
+  width: 40%;
+  opacity: 0;
+}
+
+.textoDiseño
+{
+  color: rgba(93,31,255,1);
+  font-family: Quicksand;
+  font-size: 18px;
+  font-weight:bold;
+  position: absolute;
+  right: 2%;
+  text-align: right;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  top: 47%;
+  transition: opacity 0.6s ease;
+  width: 40%;
+  opacity: 0;
+}
+
+.textoFotografia
+{
+  color: rgba(93,31,255,1);
+  font-family: Quicksand;
+  font-size: 18px;
+  font-weight:bold;
+  position: absolute;
+  right: 2%;
+  text-align: right;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  top: 47%;
+  transition: opacity 0.6s ease;
+  width: 40%;
+  opacity: 0;
 }
 
 .titulo {
