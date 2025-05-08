@@ -12,7 +12,7 @@
                 <div class="subtitulo">Caminante no hay camino, se hace camino al andar. - Antonio MACHADO</div>
                 <br><br>
             </section>
-            <a href="" title="Modo oscuro" class="modo"></a>
+            <a href="#" title="Modo oscuro" class="modo" onclick="return false;"></a>
             <section class="sobreMi">Sobre mí.<br>Desde siempre fui un explorador de 
                 lo desconocido. De niño, la ciencia encendió mi curiosidad, me 
                 enseñó a cuestionarlo todo y a encontrar belleza en el “por qué” 
@@ -54,6 +54,7 @@
         </div>
         <!-- scripts -->
         <script>
+            //Interacción de enlaces
             document.querySelectorAll('.logos, .logosF').forEach(logo => {
               logo.addEventListener('mouseenter', () =>
               {
@@ -61,9 +62,9 @@
                 document.querySelector('.sobreMi').style.opacity = '0.2';
                 document.querySelector(`.texto${rol}`).style.opacity = '1';
                 document.querySelector(`.enlace${rol}`).style.boxShadow = '0 0 15px Yellow';
-              });
-              logo.addEventListener('mouseleave', () =>
-              {
+            });
+            logo.addEventListener('mouseleave', () =>
+            {
                 document.querySelector('.sobreMi').style.opacity = '1';
                 document.querySelector('.textoDesarrollo').style.opacity = '0';
                 document.querySelector('.enlaceDesarrollo').style.boxShadow = '0 0 0 Yellow';
@@ -72,6 +73,32 @@
                 document.querySelector('.textoFotografia').style.opacity = '0';
                 document.querySelector('.enlaceFotografia').style.boxShadow = '0 0 0 Yellow';
               });
+            });
+            //Cambio modo diurno-octurno
+            const btnModo = document.querySelector(".modo");
+            // Verificamos si el usuario ya tenía una preferencia guardada
+            if (localStorage.getItem("modo") === "oscuro")
+            {
+                document.body.classList.add("dark-mode");
+                btnModo.title = "Modo claro";
+            }
+            else
+            {
+                btnModo.title = "Modo oscuro";
+            }
+            btnModo.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                // Cambiar el título del botón
+                if (document.body.classList.contains("dark-mode"))
+                {
+                    localStorage.setItem("modo", "oscuro");
+                    btnModo.title = "Modo claro";
+                }
+                else
+                {
+                    localStorage.setItem("modo", "claro");
+                    btnModo.title = "Modo oscuro";
+                }
             });
         </script>         
     </body>
