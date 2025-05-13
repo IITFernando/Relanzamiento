@@ -305,8 +305,8 @@ body.dark-mode .modo {
   }
 }
 
-/* --- Móvil (≤768px) --- */
-@media screen and (max-width: 768px)
+/* --- Móvil (≤1080px) --- */
+@media screen and (max-width: 1080px)
 {
   nav
   {
