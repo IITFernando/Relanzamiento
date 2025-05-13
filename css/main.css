@@ -1,18 +1,21 @@
-:root
-{
-  --color-resalte:rgba(255,209,31,1);
-  --color-texto:rgba(93,31,255,1);
-  --sombra-texto:rgba(0, 0, 0, 0.5);
+:root {
+  --color-resalte: rgba(255,209,31,1);
+  --color-texto: rgba(93,31,255,1);
+  --sombra-texto: rgba(0, 0, 0, 0.5);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
 }
+
 body {
   background-image: url("../images/fondoDiurno.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  margin: 0;
   font-size: 14px;
 }
 
@@ -20,63 +23,71 @@ nav {
   background: url("../images/barra.png");
   background-size: 100% 100%;
   bottom: 0;
-  height: 750px;
-  height: 85%;
+  height: 85vh;
   position: fixed;
   right: 0;
-  width: 70%;
+  width: 65vw;
 }
 
-.barraNav
-{
+.barraNav {
   width: 105%;
 }
 
 .cuerpo {
   left: 0px;
-  overflow: hidden;
   top: 0px;
-  width: 100%;
+  width: 100vw;
 }
 
-.enlaceDesarrollo
-{
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enlaceDesarrollo {
+  align-items: center;
   border: 5px solid var(--color-resalte);
   border-radius: 50%;
+  display: flex;
   height: 180px;
-  left:74%;
+  justify-content: center;
+  left: 74%;
   position: absolute;
   top: 6%;
   transition: box-shadow 0.6s ease;
   width: 180px;
 }
 
-.enlaceDiseño
-{
+.enlaceDiseño {
+  align-items: center;
   border: 5px solid var(--color-resalte);
   border-radius: 50%;
+  display: flex;
   height: 180px;
-  left:39%;
+  justify-content: center;
+  left: 39%;
   position: absolute;
   top: 23%;
   transition: box-shadow 0.6s ease;
   width: 180px;
 }
 
-.enlaceFotografia
-{
+.enlaceFotografia {
+  align-items: center;
   border: 5px solid var(--color-resalte);
   border-radius: 50%;
+  display: flex;
   height: 180px;
+  justify-content: center;
   position: absolute;
-  left:10%;
+  left: 10%;
   transition: box-shadow 0.6s ease;
   top: 57%;
   width: 180px;
 }
 
-.FT
-{
+.FT {
   width: 100%;
 }
 
@@ -88,43 +99,34 @@ nav {
   color: var(--color-resalte);
   text-align: center;
   font-family: Quicksand;
-  font-size: 28px;
+  font-size: 1.7vw;
   font-weight: Bold;
   left: 2px;
   position: absolute;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  /* width: 305px; */
-  width:29.5%;
+  width: 29.5%;
 }
 
-.linkedin a
-{
+.linkedin a {
   color: inherit;
   text-decoration: none;
 }
 
-.linkedin a:hover
-{
+.linkedin a:hover {
   text-shadow: 0 0 25px var(--color-resalte);
 }
 
-.logos
-{
-  margin-top: 37px;
+.logos {
   transition: transform 0.6s ease;
   width: 95%;
 }
 
-.logos:hover
-{
+.logos:hover {
   transform: scale(1.2);
 }
 
-.logosF
-{
+.logosF {
   border-radius: 5px;
-  margin-left: 27px;
-  margin-top: 32px;
   transition: transform 0.6s ease;
   width: 69%;
 }
@@ -133,12 +135,11 @@ nav {
   transform: scale(1.2);
 }
 
-.modo
-{
+.modo {
   background: url("../images/modoOscuro.png");
   background-size: 100% 100%;
   border-radius: 10px;
-  position:fixed;
+  position: fixed;
   height: 30px;
   margin: 20px;
   right: 0;
@@ -151,8 +152,8 @@ nav {
   position: absolute;
   left: 60px;
   font-family: Quicksand;
-  font-size: 18px;
-  font-weight:bold;
+  font-size: 1.3vw;
+  font-weight: bold;
   opacity: 1;
   text-align: left;
   text-shadow: 2px 2px 2px var(--sombra-texto);
@@ -168,53 +169,21 @@ nav {
   border-width: 7px 0 7px 0;
   color: var(--color-resalte);
   font-family: Quicksand;
-  font-size: 28px;
+  font-size: 1.8vw;
   font-weight: Bold;
   line-height: 95%;
   text-align: left;
   text-shadow: 3px 3px 2px var(--sombra-texto);
-  /* width: 725px; */
   width: 100%;
 }
 
-.textoDesarrollo
-{
+.textoDesarrollo,
+.textoDiseño,
+.textoFotografia {
   color: var(--color-texto);
   font-family: Quicksand;
-  font-size: 18px;
-  font-weight:bold;
-  position: absolute;
-  right: 2%;
-  text-align: right;
-  text-shadow: 2px 2px 2px var(--sombra-texto);
-  top: 47%;
-  transition: opacity 0.6s ease;
-  width: 40%;
-  opacity: 0;
-}
-
-.textoDiseño
-{
-  color: var(--color-texto);
-  font-family: Quicksand;
-  font-size: 18px;
-  font-weight:bold;
-  position: absolute;
-  right: 2%;
-  text-align: right;
-  text-shadow: 2px 2px 2px var(--sombra-texto);
-  top: 47%;
-  transition: opacity 0.6s ease;
-  width: 40%;
-  opacity: 0;
-}
-
-.textoFotografia
-{
-  color: var(--color-texto);
-  font-family: Quicksand;
-  font-size: 18px;
-  font-weight:bold;
+  font-size: 1.2vw;
+  font-weight: bold;
   position: absolute;
   right: 2%;
   text-align: right;
@@ -231,15 +200,11 @@ nav {
   left: 52px;
   position: absolute;
   top: 39px;
-  width: 52%;
+  width: 52vw;
 }
 
 body.dark-mode {
   background-image: url("../images/fondoNocturno.png");
-}
-
-body.dark-mode {
-  /* --color-resalte: rgba(255, 255, 255, 1); */
   --color-resalte: rgba(255, 209, 31, 1);
   --color-texto: rgba(255, 209, 31, 1);
   --sombra-texto: rgba(255, 255, 255, 0.3);
@@ -247,4 +212,187 @@ body.dark-mode {
 
 body.dark-mode .modo {
   background-image: url("../images/modoClaroBlanco.png");
+}
+
+/* Media Query para Tablet (≤1366px) */
+@media screen and (max-width: 1366px)
+{
+  nav
+  {
+    background: url("../images/barraTablet.png");
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-areas:
+      "logoFot logoDis logoDes"
+      "textoFot textoDis textoDes"
+      "linkedin textoDis textoDes";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 8fr 1fr;
+    height: 85%;
+    justify-items: center;
+  }
+
+  .enlaceDesarrollo,
+  .enlaceDiseño,
+  .enlaceFotografia
+  {
+    align-items: center;
+    display: flex;
+    height: 140px;
+    justify-content: center;
+    margin-top: 20px;
+    position: static;
+    width: 140px;
+  }
+
+  .enlaceDesarrollo { grid-area: logoDes; }
+  .enlaceDiseño { grid-area: logoDis; }
+  .enlaceFotografia { grid-area: logoFot; }
+
+  .linkedin
+  {
+    grid-area: linkedin;
+    position: relative;
+    width: 100%;
+  }
+
+  .logos
+  {
+    margin-top: 0;
+  }
+
+  .logosF
+  {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .sobreMi
+  {
+    font-size: 1.3vw;
+    margin-right: 65vw;
+    width: 20%;
+  }
+
+  .subtitulo
+  {
+    font-size: 1.4vw;
+  }
+
+  .textoDesarrollo,
+  .textoDiseño,
+  .textoFotografia
+  {
+    color: var(--color-resalte);
+    font-size: 1.1vw;
+    grid-area: auto;
+    margin-top: 40px;
+    opacity: 1;
+    overflow: hidden;
+    padding-right: 7%;
+    position: static;
+    text-align: justify;
+    width: 80%;
+  }
+
+  .textoDesarrollo { grid-area: textoDes; }
+  .textoDiseño { grid-area: textoDis; }
+  .textoFotografia { grid-area: textoFot; }
+
+  .titulo
+  {
+    width: 25vw;
+  }
+}
+
+/* --- Móvil (≤768px) --- */
+@media screen and (max-width: 768px)
+{
+  nav
+  {
+    align-items: center;
+    background: url("../images/barraMovil.png");
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-areas:
+      "logoDes textoDes"
+      "logoDis textoDis"
+      "logoFot textoFot"
+      "linkedin linkedin";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 7fr 7fr 7fr 1fr;
+    height: auto;
+    margin: 20px auto;
+    position: relative;
+    right: auto;
+    width: 90%;
+  }
+
+  .cuerpo
+  {
+    display: grid;
+    overflow: visible;
+  }
+
+  .enlaceDesarrollo,
+  .enlaceDiseño,
+  .enlaceFotografia
+  {
+    height: 90px;
+    margin: 10px auto;
+    position: static;
+    width: 90px;
+  }
+
+  .enlaceDesarrollo { grid-area: logoDes; }
+  .enlaceDiseño { grid-area: logoDis; }
+  .enlaceFotografia { grid-area: logoFot; }
+
+  .linkedin
+  {
+    font-size: 3vw;
+    grid-area: linkedin;
+    margin-top: 15px;
+    position: static;
+    width: 100%;
+  }
+
+  .sobreMi
+  {
+    font-size: 2.5vw;
+    margin: 20px auto;
+    padding: 20px 0;
+    position: static;
+    text-align: justify;
+    width: 80%;
+  }
+
+  .subtitulo
+  {
+    font-size: 3vw;
+  }
+
+  .textoDesarrollo,
+  .textoDiseño,
+  .textoFotografia
+  {
+    font-size: 2.5vw;
+    margin: auto;
+    opacity: 1;
+    padding: 10px;
+    position: static;
+    text-align: justify;
+    width: 95%;
+  }
+
+  .textoDesarrollo { grid-area: textoDes; }
+  .textoDiseño { grid-area: textoDis; }
+  .textoFotografia { grid-area: textoFot; }
+
+  .titulo
+  {
+    margin: 20px auto;
+    position: static;
+    width: 50vw;
+  }
 }
