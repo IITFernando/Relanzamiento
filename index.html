@@ -54,16 +54,43 @@
         </div>
         <!-- scripts -->
         <script>
-            //Interacción de enlaces
-            document.querySelectorAll('.logos, .logosF').forEach(logo => {
-              logo.addEventListener('mouseenter', () =>
-              {
-                const rol=logo.dataset.rol
+            //Inhabilita las interacciones para modos tablet y móvil
+            let habilitarInteracciones=false
+
+            function activarInteracciones()
+            {
+                if (habilitarInteracciones) return
+                habilitarInteracciones=true
+                //Interacción de enlaces
+                document.querySelectorAll('.logos, .logosF').forEach(logo => 
+                {
+                    logo.addEventListener('mouseenter', controladorMouseSobre)
+                    logo.addEventListener('mouseleave', controladorMouseFuera)
+                });
+            }
+
+            function desactivarInteracciones()
+            {
+                if(!habilitarInteracciones) return
+                habilitarInteracciones=false
+                //Interacción de enlaces
+                document.querySelectorAll('.logos, .logosF').forEach(logo => 
+                {
+                    logo.removeEventListener('mouseenter', controladorMouseSobre)
+                    logo.removeEventListener('mouseleave', controladorMouseFuera)
+                });
+                location.reload()
+            }
+
+            function controladorMouseSobre(e)
+            {
+                const rol=e.target.dataset.rol
                 document.querySelector('.sobreMi').style.opacity = '0.2';
                 document.querySelector(`.texto${rol}`).style.opacity = '1';
                 document.querySelector(`.enlace${rol}`).style.boxShadow = '0 0 15px Yellow';
-            });
-            logo.addEventListener('mouseleave', () =>
+            }
+
+            function controladorMouseFuera(e)
             {
                 document.querySelector('.sobreMi').style.opacity = '1';
                 document.querySelector('.textoDesarrollo').style.opacity = '0';
@@ -72,8 +99,27 @@
                 document.querySelector('.enlaceDiseño').style.boxShadow = '0 0 0 Yellow';
                 document.querySelector('.textoFotografia').style.opacity = '0';
                 document.querySelector('.enlaceFotografia').style.boxShadow = '0 0 0 Yellow';
-              });
-            });
+            }
+
+            //Verifica el tamaño inicial
+            if (window.innerWidth>1366)
+            {
+                activarInteracciones()
+            }
+
+            //Atiende cambios de tamaño
+            window.addEventListener("resize",() =>
+            {
+                if(window.innerWidth>1366)
+                {
+                    activarInteracciones()
+                }
+                else
+                {
+                    desactivarInteracciones()
+                }
+            })
+
             //Cambio modo diurno-octurno
             const btnModo = document.querySelector(".modo");
             // Verificamos si el usuario ya tenía una preferencia guardada
