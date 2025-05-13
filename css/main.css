@@ -338,10 +338,10 @@ body.dark-mode .modo {
   .enlaceDiseño,
   .enlaceFotografia
   {
-    height: 90px;
+    height: 120px;
     margin: 10px auto;
     position: static;
-    width: 90px;
+    width: 120px;
   }
 
   .enlaceDesarrollo { grid-area: logoDes; }
