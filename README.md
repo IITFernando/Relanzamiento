@@ -18,7 +18,10 @@ También es un testimonio de mi historia: después de décadas de experiencia en
 - HTML5
 - CSS3 (con media queries para diseño responsive)
 - JavaScript (DOM, localStorage, adaptabilidad)
-- Figma (diseño visual previo)
+- node js 
+- React js 
+- Python 
+- Figma (diseño visual previo UI)
 - GitHub Pages (deploy)
 
 ## 🧩 Funcionalidades
@@ -43,3 +46,4 @@ Este sitio es mi carta de presentación, y seguirá evolucionando.
 
 Gracias por pasar por acá.  
 Soy **Fernando Tula**. Me reinvento porque no dejé de tener algo para ofrecer.
+
