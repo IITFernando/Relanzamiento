@@ -147,6 +147,20 @@ a {
   width: 30px;
 }
 
+.idioma {
+  background: url("../images/reino-unido.png");
+  background-size: 100% 100%;
+  border-radius: 10px;
+  position: fixed;
+  height: 30px;
+  margin: 20px;
+  margin-right: 60px;
+  margin-top: 23px;
+  right: 0;
+  top: 0;
+  width: 30px;
+}
+
 .sobreMi {
   color: var(--color-texto);
   position: absolute;
