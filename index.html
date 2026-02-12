@@ -13,16 +13,8 @@
                 <br><br>
             </section>
             <a href="#" title="Modo oscuro" class="modo" onclick="return false;"></a>
-            <section class="sobreMi">Sobre mí.<br>Desde siempre fui un explorador de 
-                lo desconocido. De niño, la ciencia encendió mi curiosidad, me 
-                enseñó a cuestionarlo todo y a encontrar belleza en el “por qué” 
-                de las cosas. Con el tiempo, esa pasión se fusionó con el 
-                arte, el diseño y la necesidad de crear. Hoy, mi camino 
-                abarca el desarrollo de software, la fotografía, la 
-                docencia y el diseño. Cada línea de código, cada imagen y 
-                cada idea que trazo es un reflejo de esa inquietud que 
-                nunca se apaga. Porque aprender, innovar y compartir 
-                conocimiento no es solo lo que hago… es quien soy.
+            <a href="#" title="En inglés" class="idioma" onclick="return false;"></a>
+            <section class="sobreMi" id="sobremi">
             </section>
             <nav>
                 <div class="enlaceDesarrollo">
@@ -30,24 +22,21 @@
                         <img class="logos" src="images/logoIIT.png" data-rol="Desarrollo">
                     </a>
                 </div>
-                <section class="textoDesarrollo">
-                    Con años de experiencia en desarrollo de sistemas, diseño web, bases de datos y docencia, comprendo las necesidades de cada proyecto y creo soluciones robustas y eficientes. Integro diversas tecnologías para aplicaciones de escritorio y plataformas web, priorizando la calidad y la experiencia del usuario. Mi enfoque en UX/UI, junto con mi pasión por el diseño y la metodología, me permite transformar ideas en productos funcionales, intuitivos y bien estructurados. Además, me mantengo en constante formación para ofrecer soluciones innovadoras en un entorno en constante cambio. (Click para ir al Instagram)
+                <section class="textoDesarrollo" id="desarrollo">                    
                 </section>
                 <div class="enlaceDiseño">
                     <a href="https://www.instagram.com/ftula_disenio/" target="_blank">
                         <img class="logos" src="images/logoDiseño.png" data-rol="Diseño">
                     </a>
                 </div>
-                <section class="textoDiseño">
-                    Estudiante y apasionado del diseño, <br>exploro el equilibrio entre funcionalidad y belleza. Me inspiran el minimalismo, la elegancia y la creatividad, siempre buscando mejorar lo visual. Como aficionado curioso e inconformista, experimento y aprendo constantemente, desafiando lo convencional para ir más allá. (Click para ir al Instagram)
+                <section class="textoDiseño" id="diseno">
                 </section>
                 <div class="enlaceFotografia">
                     <a href="https://www.instagram.com/ftula_fotografia/" target="_blank">
                         <img class="logosF" src="images/logoFotografia.png" data-rol="Fotografia">
                     </a>
                 </div>
-                <section class="textoFotografia">
-                    Fotógrafo aficionado desde siempre, comencé con una cámara automática sencilla, luego exploré el mundo de la SLR de rollo y hoy disfruto de la fotografía digital. Me apasiona capturar la belleza en lo cotidiano, desde bodegones y fotografía de alimentos hasta paisajes, macro y abstracción minimalista. La fotografía es mi manera de observar, de emocionarme y de encontrar arte en cada detalle. (Click para ir al Instagram)
+                <section class="textoFotografia" id="fotografia">
                 </section>
                 <span class="linkedin"><a href="https://www.linkedin.com/in/fernando-tula/" target="_blank">LinkedIn</a></span>
             </nav>
@@ -80,6 +69,64 @@
                     logo.removeEventListener('mouseleave', controladorMouseFuera)
                 });
                 location.reload()
+            }
+
+            function aEspañol()
+            {
+                fetch('sobremi.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sobremi').innerText = data;
+                    document.getElementById("español").disabled=true
+                    document.getElementById("ingles").disabled=false
+                });
+
+                fetch('desarrollo.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('desarrollo').innerText = data;
+                });
+
+                fetch('diseno.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('diseno').innerText = data;
+                });
+
+                fetch('fotografia.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('fotografia').innerText = data;
+                });
+            }
+
+            function aIngles()
+            {
+                fetch('aboutme.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sobremi').innerText = data;
+                    document.getElementById("español").disabled=true
+                    document.getElementById("ingles").disabled=false
+                });
+
+                fetch('development.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('desarrollo').innerText = data;
+                });
+
+                fetch('design.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('diseno').innerText = data;
+                });
+
+                fetch('photography.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('fotografia').innerText = data;
+                });
             }
 
             function controladorMouseSobre(e)
@@ -146,6 +193,48 @@
                     btnModo.title = "Modo oscuro";
                 }
             });
+
+            //Cambio modo idioma
+            // Elemento del botón de idioma
+            const btnIdioma = document.querySelector(".idioma");
+
+            // Cargar idioma al iniciar
+            window.onload = function() {
+                const idioma = localStorage.getItem("idioma") || "ingles";
+                if (idioma === "espanol") {
+                    aEspañol();
+                    btnIdioma.style.backgroundImage = 'url("images/reino-unido.png")';
+                    btnIdioma.title = "In English";
+                } else {
+                    aIngles();
+                    btnIdioma.style.backgroundImage = 'url("images/espana.png")';
+                    btnIdioma.title = "En Español";
+                }
+            };
+
+            // Evento click del botón
+            btnIdioma.addEventListener("click", () => {
+                const idiomaActual = localStorage.getItem("idioma") || "ingles";
+                if (idiomaActual === "ingles") {
+                    aEspañol();
+                    localStorage.setItem("idioma", "espanol");
+                    btnIdioma.style.backgroundImage = 'url("images/reino-unido.png")';
+                    btnIdioma.title = "In English";
+                } else {
+                    aIngles();
+                    localStorage.setItem("idioma", "ingles");
+                    btnIdioma.style.backgroundImage = 'url("images/espana.png")';
+                    btnIdioma.title = "En Español";
+                }
+            });
+
+            // Cargar español al iniciar la página
+            //window.onload = function()
+            //{
+            //    aEspañol();
+                //aIngles();
+            //};
+
         </script>         
     </body>
 </html>
