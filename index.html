@@ -203,11 +203,11 @@
                 const idioma = localStorage.getItem("idioma") || "ingles";
                 if (idioma === "espanol") {
                     aEspañol();
-                    btnIdioma.style.backgroundImage = 'url("images/reino-unido.png")';
+                    btnIdioma.style.backgroundImage = 'url("../images/reino-unido.png")';
                     btnIdioma.title = "In English";
                 } else {
                     aIngles();
-                    btnIdioma.style.backgroundImage = 'url("images/espana.png")';
+                    btnIdioma.style.backgroundImage = 'url("../images/espana.png")';
                     btnIdioma.title = "En Español";
                 }
             };
@@ -218,12 +218,12 @@
                 if (idiomaActual === "ingles") {
                     aEspañol();
                     localStorage.setItem("idioma", "espanol");
-                    btnIdioma.style.backgroundImage = 'url("images/reino-unido.png")';
+                    btnIdioma.style.backgroundImage = 'url("../images/reino-unido.png")';
                     btnIdioma.title = "In English";
                 } else {
                     aIngles();
                     localStorage.setItem("idioma", "ingles");
-                    btnIdioma.style.backgroundImage = 'url("images/espana.png")';
+                    btnIdioma.style.backgroundImage = 'url("../images/espana.png")';
                     btnIdioma.title = "En Español";
                 }
             });
