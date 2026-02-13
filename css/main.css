@@ -148,17 +148,17 @@ a {
 }
 
 .idioma {
-  background: url("../images/reino-unido.png");
+  background: url("../images/AIngles.png");
   background-size: 100% 100%;
   border-radius: 10px;
   position: fixed;
-  height: 30px;
+  height: 50px;
   margin: 20px;
   margin-right: 60px;
-  margin-top: 23px;
+  margin-top: 13px;
   right: 0;
   top: 0;
-  width: 30px;
+  width: 60px;
 }
 
 .sobreMi {
