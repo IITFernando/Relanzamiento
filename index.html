@@ -203,11 +203,11 @@
                 const idioma = localStorage.getItem("idioma") || "ingles";
                 if (idioma === "espanol") {
                     aEspañol();
-                    btnIdioma.style.backgroundImage = 'url("images/aIngles.png")';
+                    btnIdioma.style.backgroundImage = 'url("images/AIngles.png")';
                     btnIdioma.title = "En español";
                 } else {
                     aIngles();
-                    btnIdioma.style.backgroundImage = 'url("images/aEspanol.png")';
+                    btnIdioma.style.backgroundImage = 'url("images/AEspanol.png")';
                     btnIdioma.title = "En Inglés";
                 }
             };
@@ -218,12 +218,12 @@
                 if (idiomaActual === "ingles") {
                     aEspañol();
                     localStorage.setItem("idioma", "espanol");
-                    btnIdioma.style.backgroundImage = 'url("images/aIngles.png")';
+                    btnIdioma.style.backgroundImage = 'url("images/AIngles.png")';
                     btnIdioma.title = "In English";
                 } else {
                     aIngles();
                     localStorage.setItem("idioma", "ingles");
-                    btnIdioma.style.backgroundImage = 'url("images/aEspanol.png")';
+                    btnIdioma.style.backgroundImage = 'url("images/AEspanol.png")';
                     btnIdioma.title = "En Español";
                 }
             });
